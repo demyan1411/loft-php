@@ -76,3 +76,11 @@ function set_smile()
 
     return false;
 }
+
+function open_file($file)
+{
+    if (!file_exists($file))
+        return get_error();
+
+    return file_get_contents($file, true);
+}

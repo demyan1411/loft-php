@@ -75,20 +75,72 @@ function task2()
         'zxc'
     ];
 
+//    $arr2 = [
+//        'qwe' => 'QWQWEQWE',
+//        'asd' => [
+//            's',
+//            's',
+//            'd' => [1, 2, 4]
+//        ],
+//        'zxc'
+//    ];
+
     file_put_contents('output.json', json_encode($arr));
     $new_arr = json_decode(file_get_contents('output.json', true), true);
 
-    if (rand(0, 1)) $new_arr['qwe'] = 'QWEQWEQWE';
+    if (rand(1, 1)) {
+        $new_arr = [
+            'qwe' => 'QWEQWE',
+            'asd' => [
+                's',
+                's',
+                'd' => [1, 2, 4]
+            ],
+            'zxc'
+        ];
+    }
 
     file_put_contents('output2.json', json_encode($new_arr));
 
     $output1 = json_decode(file_get_contents('output.json', true), true);
     $output2 = json_decode(file_get_contents('output2.json', true), true);
 
-    $diff = array_diff(array_map('json_encode', $output1), array_map('json_encode', $output2));
-    $diff = array_map('json_decode', $diff);
+    echo '<pre>';
+    $diff = array_recursive_diff($output1, $output2);
+
+//    $diff = array_diff(array_map('json_encode', $output1), array_map('json_encode', $output2));
+//    $diff = array_map('json_decode', $diff);
 
     print_r($diff);
+}
+
+function array_recursive_diff($arr1, $arr2) {
+    $result = [];
+
+    foreach ($arr1 as $key => $val) {
+        if (is_array($arr2) && array_key_exists($key, $arr2)) {
+
+            if (is_array($val)) {
+
+                $recursive_diff = array_recursive_diff($val, $arr2[$key]);
+
+                if (count($recursive_diff)) {
+                    $result[$key] = $recursive_diff;
+                }
+
+            } else {
+
+                if ($val != $arr2[$key]){
+                    $result[$key] = $val;
+                }
+            }
+
+        } else {
+            $result[$key] = $val;
+        }
+    }
+
+    return $result;
 }
 
 function task3()
