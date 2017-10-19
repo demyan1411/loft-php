@@ -1,0 +1,13 @@
+doctype html
+html(lang='en')
+    head
+        block head
+            meta(charset='utf-8')
+            title Test application
+
+    body
+        div.container
+            h2 Example page
+            ul.navlist
+                each item in items
+                    li: a(href='#{item.route}') #{item.name}

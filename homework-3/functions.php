@@ -66,7 +66,7 @@ function task1($file)
 function task2()
 {
     $arr = [
-        'qwe' => ['q', 'w', 'e'],
+        'qwe' => 'qweqwe',
         'asd' => [
             'a',
             's',
@@ -90,7 +90,7 @@ function task2()
 
     if (rand(1, 1)) {
         $new_arr = [
-            'qwe' => 'QWEQWE',
+            'qwe' => 123,
             'asd' => [
                 's',
                 's',
