@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+    head
+        block head
+            meta(charset='utf-8')
+            title Test application
+
+            link(rel="stylesheet", href="./css/vendors.min.css")
+
+    body
+        .wrapper
+            .maincontent
+                section.section
+                    .container
+                        h3 Cписок всех зарегистрированных пользователей.
+
+                        table(border="1" style='border-collapse: collapse')
+                            tr
+                                each val, key in users[0]
+                                    th
+                                        div #{key}
+
+                            each arr in users
+                                tr
+                                    each val, key in arr
+                                        td
+                                            div #{val}
+
+                        br
+
+                        h3 Cписок всех заказов
+
+                        table(border="1" style='border-collapse: collapse')
+                            tr
+                                each val, key in orders[0]
+                                    th
+                                        div #{key}
+
+                            each arr in orders
+                                tr
+                                    each val, key in arr
+                                        td
+                                            div #{val}

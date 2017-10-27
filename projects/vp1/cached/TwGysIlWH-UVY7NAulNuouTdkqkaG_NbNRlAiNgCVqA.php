@@ -1,8 +1,0 @@
-<!DOCTYPE html><html lang="en"<?php $__classes = implode(" ", array_unique(array_merge(empty($__classes) ? array() : explode(" ", $__classes), array (
-), array())) ); ?><?php if (!empty($__classes)) { echo ' class="' . $__classes . '"'; } unset($__classes);  ?>><head><meta charset="utf-8"<?php $__classes = implode(" ", array_unique(array_merge(empty($__classes) ? array() : explode(" ", $__classes), array (
-), array())) ); ?><?php if (!empty($__classes)) { echo ' class="' . $__classes . '"'; } unset($__classes);  ?>><title>Test application</title></head><body><div<?php $__classes = implode(" ", array_unique(array_merge(empty($__classes) ? array() : explode(" ", $__classes), array (
-  0 => 'container',
-), array())) ); ?><?php if (!empty($__classes)) { echo ' class="' . $__classes . '"'; } unset($__classes);  ?>><h2>Example page</h2><ul<?php $__classes = implode(" ", array_unique(array_merge(empty($__classes) ? array() : explode(" ", $__classes), array (
-  0 => 'navlist',
-), array())) ); ?><?php if (!empty($__classes)) { echo ' class="' . $__classes . '"'; } unset($__classes);  ?>><?php foreach ($items as $item) { ?><li><a<?php if (true === ($__value = '' . \Jade\Compiler::getPropertyFromAnything($item, 'route') . '')) {  ?> href<?php } else if (\Jade\Compiler::isDisplayable($__value)) {  ?> href="<?php echo \Jade\Compiler::getEscapedValue($__value, '"') ?>"<?php } ?><?php $__classes = implode(" ", array_unique(array_merge(empty($__classes) ? array() : explode(" ", $__classes), array (
-), array())) ); ?><?php if (!empty($__classes)) { echo ' class="' . $__classes . '"'; } unset($__classes);  ?>><?php echo \Jade\Compiler::getEscapedValue(\Jade\Compiler::getPropertyFromAnything($item, 'name'), '"') ?></a></li><?php } ?></ul></div></body></html>
