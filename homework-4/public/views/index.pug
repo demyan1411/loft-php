@@ -1,0 +1,35 @@
+extends layouts/layout
+
+block content
+  nav.navbar.navbar-inverse.navbar-fixed-top
+    .container
+      .navbar-header
+        button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='#') Project name
+      #navbar.collapse.navbar-collapse
+
+        include blocks/menu
+
+      // /.nav-collapse
+  .container
+    .form-container
+      form#login-form.form-horizontal(action='/login')
+        .form-group
+          label.col-sm-2.control-label(for='inputEmail3') Логин
+          .col-sm-10
+            input#inputEmail3.form-control(type='text', placeholder='Логин' name='login')
+        .form-group
+          label.col-sm-2.control-label(for='inputPassword3') Пароль
+          .col-sm-10
+            input#inputPassword3.form-control(type='password', placeholder='Пароль' name='password')
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(type='submit') Войти
+            br
+            br
+            |               Нет аккаунта?
+            a(href='/reg') Зарегистрируйтесь

@@ -1,0 +1,16 @@
+ul.nav.navbar-nav
+    if is_auth
+        li
+            a(href='/list') Список пользователей
+        li
+            a(href='/filelist') Список файлов
+        li
+            a(href='/profile') Профиль
+        li
+            a(href='/logout') Выйти
+
+    else
+        li
+            a(href='/') Авторизация
+        li
+            a(href='/reg') Регистрация

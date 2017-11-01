@@ -1,0 +1,38 @@
+extends layouts/layout
+
+block content
+  nav.navbar.navbar-inverse.navbar-fixed-top
+    .container
+      .navbar-header
+        button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='#') Project name
+      #navbar.collapse.navbar-collapse
+
+        include blocks/menu
+
+      // /.nav-collapse
+  .container
+    h1 Запретная зона, доступ только авторизированному пользователю
+    h2 Информация выводится из списка файлов
+    table#photos.table.table-bordered
+      tr
+        th Название файла
+        th Фотография
+        th Действия
+
+      each photo in photos
+        tr
+          each val in photo
+            td
+              div #{val}
+
+          td
+            img(src='/photos/#{photo["photo"]}', alt='')
+
+          td
+            a.delete-photo(href='/delete-photo' data-photo='#{photo["photo"]}')
+              | Удалить аватарку пользователя
