@@ -1,5 +1,11 @@
 {
     "require": {
-        "pug-php/pug": "^2.7"
+        "pug-php/pug": "^2.7",
+        "twig/twig": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hm5\\":"homework-5/app/"
+        }
     }
 }
