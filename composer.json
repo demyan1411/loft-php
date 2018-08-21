@@ -5,7 +5,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Hm5\\":"homework-5/app/"
+            "Hm5\\":"homework-5/app/",
+            "Patterns\\":"solid/patterns"
         }
     }
 }
